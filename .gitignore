@@ -10,9 +10,14 @@ __pycache__/
 .Python
 env/
 build/
+*.pyc
+*.ipynb
+.ipynb_checkpoints
+migrations/
 develop-eggs/
 dist/
 downloads/
+migrations/
 eggs/
 .eggs/
 lib/
