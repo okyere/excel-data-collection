@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+
+    <form action="" method="POST" enctype="multipart/form-data">
+
+    {{ form.hidden_tag() }}
+    <p>
+        Group Name:
+        {{ form.departmentname(size = 50) }}
+        {% for error in form.departmentname.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        <input type="submit" value="Create Department"> | <input type="reset" value="Clear"> | <a href="{{ url_for('admin') }}">
+        <input type="button" value="Cancel" /></a>
+    </p>
+
+    </form>
+</div>
+{% endblock %}

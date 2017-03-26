@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('.static', filename='custom_css.css')}}">
+{{super()}}
+{% endblock %}
+
+{% block scripts %}
+  {{super()}}
+  <script>
+    function loading(){
+      $("#loading").show();
+      $(".container").hide();
+  }</script>
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<div id="loading"> <h2> Loading data into table... </h2> </div>
+
+<div class="container">
+
+<br>
+<br>
+
+    <form action="" method="POST" enctype="multipart/form-data" class="col-xs-5">
+
+        {{ form.hidden_tag() }}
+
+        {{ wtf.form_errors(form, hiddens="only") }}
+        {{ wtf.form_field(form.targettableinfo) }}
+
+        {{ wtf.form_errors(form, hiddens="only") }}
+        {{ wtf.form_field(form.upload) }}
+
+        <div class="form-actions">
+          <button type="submit" title=""  class="btn btn-danger" onclick="loading()">Submit</button>
+          <button type="reset" title=""  class="btn btn-primary">Clear</button>
+        </div>
+
+    </form>
+    </div>
+{% endblock %}

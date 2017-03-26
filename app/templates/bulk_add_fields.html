@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<div class="container">
+
+  <h2> Adding column to {{ tableinfo.table_name }} </h2>
+  <form action="" method="POST" enctype="multipart/form-data">
+
+
+      {{ form.hidden_tag() }}
+      {{ wtf.form_errors(form, hiddens="only") }}
+
+      {{ wtf.form_field(form.upload) }}
+
+
+      <div class="form-actions">
+        <button type="submit" title=""  class="btn btn-danger">Submit</button>
+        <button type="reset" title=""  class="btn btn-primary">Clear</button>
+        <button class = btn btn-default>  <a href="{{ url_for('fields', iid = tableinfo.id) }}">Cancel </a> </button>
+      </div>
+
+    </form>
+</div>
+
+{% endblock %}

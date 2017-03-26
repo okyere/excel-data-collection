@@ -1,0 +1,31 @@
+{% extends "bootstrap/base.html" %}
+
+{% block head %}
+{{ super() }}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+{% endblock %}
+
+{% block title %}
+    FBBI Data Upload Tool
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header" target="contentFrame">
+      <a class="navbar-brand">
+        <img src="{{url_for('.static', filename = 'logo-caterpillar.png')}}">
+      </a>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li><a href= "{{ url_for('upload') }}" >Data Upload Home</a></li>
+      <li><a href= "{{ url_for('instructions') }}" >Instructions</a></li>
+    </ul>
+
+  </div>
+</nav>
+<hr>
+<br>
+{% endblock %}

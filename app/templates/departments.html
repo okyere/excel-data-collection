@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h2>Departments List</h2>
+
+    {% for department in departments.order_by(asc("name")).all() %}
+
+    <div>
+        <p>{{ department.name }} | <a href="{{ url_for('add_tableinfo', did = department.id) }}">Add source</a> | <a href = "{{ url_for('delete_department', did = department.id) }}"> Delete </a> </p>
+
+        <ul>
+            {% for table in department.tables_info %}
+                    <li>Data source [{{ table.descriptive_name }}] with database table [{{ table.table_name }}] | <a href = "{{ url_for('delete_tableinfo', iid = table.id) }}"> Delete </a> | <a href = "{{ url_for('fields', iid = table.id) }}"> Fields </a></li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    {% endfor %}
+    <a href="{{ url_for('add_department') }}">Create New</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Data Errors</h1>
+      <h4> There is a problem with input file. </h4>
+
+  </br>
+    <p>  {{ error }} </p>
+
+   <a href="{{ url_for('upload') }}">Back To Upload Page</a>
+{% endblock %}

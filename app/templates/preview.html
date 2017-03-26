@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('.static', filename='jquery.dataTables.min.css')}}">
+{{super()}}
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container">
+
+    <p> Data has been successfully loaded into the {{ tablename }} table. </p>
+    <p> User: {{ username }} </p>
+    <p>  Data source: {{ original_file_name }} </p>
+    <br>
+
+    <p> First 10 rows of data previewed below </p>
+    <hr>
+      {{data | safe}}
+    <br><br>
+  </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h2> {{ tableinfo.first().table_name }} Fields </h2>
+
+    {% for field in fields.order_by(asc("name")).all() %}
+    <div>
+        <p>{{ field.name }} | {{ field.type.name }} | <a href = "{{ url_for('delete_field', iid = tableinfo.first().id, fid = field.id) }}"> Delete </a> </p>
+    </div>
+
+    {% endfor %}
+      <a href="{{ url_for('add_field', iid = tableinfo.first().id) }}">Create New Field</a>
+      <a href="{{ url_for('bulk_add_fields', iid = tableinfo.first().id) }}">Add Fields In Bulk</a>
+
+    {# This is a comment now.
+      <a href="{{ url_for('add_field', iid = tableinfo.first().id) }}">Create New Field</a>
+    #}
+</div>
+{% endblock %}

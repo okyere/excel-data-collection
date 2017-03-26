@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+
+    <form action="" method="POST" enctype="multipart/form-data">
+
+    {{ form.hidden_tag() }}
+    <p>
+        Descriptive Name:
+        {{ form.descriptive_name(size = 50) }}
+        {% for error in form.descriptive_name.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        Table Name:
+        {{ form.table_name(size = 30) }}
+        {% for error in form.table_name.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        <input type="submit" value="Create Table"> | <input type="reset" value="Clear"> | <a href="{{ url_for('admin') }}">
+        <input type="button" value="Cancel" /></a>
+    </p>
+
+    </form>
+</div>
+{% endblock %}

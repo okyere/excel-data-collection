@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+
+    <form action="" method="POST" enctype="multipart/form-data">
+
+    <h2> Creating Field For {{ tableinfo.table_name }} </h2>
+    {{ form.hidden_tag() }}
+    <p>
+        Field Name:
+        {{ form.fieldname(size = 30) }}
+        {% for error in form.fieldname.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        Field Type:
+        {{ form.fieldtype}}
+        {% for error in form.fieldtype.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        <input type="submit" value="Create Field"> | <input type="reset" value="Clear"> | <a href="{{ url_for('fields', iid = tableinfo.id) }}">
+        <input type="button" value="Cancel" /></a>
+    </p>
+
+    </form>
+</div>
+{% endblock %}
