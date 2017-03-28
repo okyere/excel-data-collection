@@ -3,8 +3,7 @@ This flask application allows an admin to collect data in Excel worksheets from 
 
 ## Setup
 ### Get Postgresql database up
-If you already have a postgres database up and running, clone this repository and skip to the database migration step.
-Get a postgresql database going. Install docker on your OS. This is tested on MacOS and Linux. Then use the postgres image here https://store.docker.com/images/022689bf-dfd8-408f-9e1c-19acac32e57b?tab=description by running 
+If you already have a postgres database up and running, clone this repository and skip to the database migration step. Otherwise, get a postgresql database going. Install docker on your OS. This is tested on MacOS and Linux. Then use the postgres image here https://store.docker.com/images/022689bf-dfd8-408f-9e1c-19acac32e57b?tab=description by running 
 
     docker pull postgres 
     
