@@ -1,5 +1,5 @@
 # excel-data-collection
-This flask application allows an admin to collect data from excel workbooks onto a database. The admin needs to define the table, its column, and data types (Text, Number, Date). These data types will be validated before attempting to write to the database table.
+This flask application allows an admin to collect data in Excel worksheets from onto a database. The admin needs to define the table, its column, and data types (Text, Number, Date). These data types will be validated before attempting to write to the database table.
 
 ## Setup
 ### Get Postgresql database up
