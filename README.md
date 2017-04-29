@@ -1,9 +1,9 @@
 # excel-data-collection
-This flask application allows an admin to collect data from excel workbooks onto a database. The admin needs to define the table, its column, and data types (Text, Number, Date). These data types will be validated before attempting to write to the database table.
+This flask application allows an admin to collect data in Excel worksheets from onto a database. The admin needs to define the table, its column, and data types (Text, Number, Date). These data types will be validated before attempting to write to the database table.
 
 ## Setup
 ### Get Postgresql database up
-Get a postgresql database going. Install docker on your OS. This is tested on MacOS and Linux. Then use the postgres image here https://store.docker.com/images/022689bf-dfd8-408f-9e1c-19acac32e57b?tab=description by running 
+If you already have a postgres database up and running, clone this repository and skip to the database migration step. Otherwise, get a postgresql database going. Install docker on your OS. This is tested on MacOS and Linux. Then use the postgres image here https://store.docker.com/images/022689bf-dfd8-408f-9e1c-19acac32e57b?tab=description by running 
 
     docker pull postgres 
     
@@ -13,6 +13,7 @@ Create a postgresql database container as:
     docker run --name mydatabase -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
     
 That command creates an postgres container called mydatabase from the postgres image exposing port 5432 of your host OS to the newly created container. If everything works out, install pgAdmin or your favorite Postgresql GUI browser and log in with user = postgres, password = postgres, port 5432, host = localhost.
+Now that you have a database running, clone this repository.
 
 ### Do database migration
 Use the requirements.txt to create a new virtual environment or a conda environment with environment.yml.Tested with python 3.5. Now cd into the root of the folder where run.py resides and run these commands:
