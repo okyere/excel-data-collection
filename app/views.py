@@ -279,7 +279,7 @@ def upload():
                     return bad_request('''Non-date cell(s) under the '{}' column. {}'''.format(col_name, ["Row {} has value '{}'.".format(key, value) for key, value in non_date_dict.items()]))
 
             elif col_type == 'Number': # For number column
-                if df[col_name].dtype != np.dtype('float64'):
+                if df[col_name].dtype not in [np.dtype('float64'), np.dtype('int64')]:
                     non_numeric_rows = df[col_name][~df[col_name].apply(numeric_test)]
                     non_numeric_dict = {}
                     for i, j in non_numeric_rows.iteritems():
