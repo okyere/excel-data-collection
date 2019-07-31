@@ -27,7 +27,7 @@ This migration is powered by flask-migrate https://flask-migrate.readthedocs.io/
 ### Run application
     python run.py
 
-Navigate to localhost:5000/admin/departments and create a group eg. Marketing Department. Then add a data source which basically builds a table on your database ready for data to fill it. Give it a descriptive name and then the table's name - lower cases and no spaces. Once a table is added, add some columns and their column types. Create an excel file with with the columns you defined and add some rows of data. Navigate to localhost:5000/upload and select the table's descriptive name from the dropdown list, browse to select the excel file you created and then Submit. The excel data is loaded onto the database table and the user gets a preview of the data - first 10 rows.
+Navigate to localhost:5000/admin/departments. Both user and password is *admin* and create a group eg. Marketing Department. Then add a data source which basically builds a table on your database ready for data to fill it. Give it a descriptive name and then the table's name - lower cases and no spaces. Once a table is added, add some columns and their column types. Create an excel file with with the columns you defined and add some rows of data. Navigate to localhost:5000/upload and select the table's descriptive name from the dropdown list, browse to select the excel file you created and then Submit. The excel data is loaded onto the database table and the user gets a preview of the data - first 10 rows.
 
 #### Validations
 1. Columns from the excel file are compared with columns on the database table for matches.
